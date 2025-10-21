@@ -1,3 +1,8 @@
+:root {
+  --color-fon-link:#A10000;
+  --color-text-link:#fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +11,7 @@
 body {
   display: grid;
   grid-template-columns: 0.15fr 1fr 0.15fr;
+  justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,15 +23,17 @@ p {
 }
 
 .fon-blue {
-  background-image: url(../img/fon-header.svg);
+  width: 100%;
+  background: url(../img/fon-header.svg), #00164F 100%;
   background-repeat: repeat-y;
-  background-color: #00164F;
 }
 
 .contener {
+  width: 100%;
   grid-column: 2;
   display: grid;
   grid-template-columns: 0.15fr 1fr 0.15fr;
+  justify-content: space-between;
 }
 
 .header {
@@ -37,11 +45,12 @@ p {
   grid-column: 2;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 .header .nav .logo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 0.1fr;
   justify-items: center;
   margin: 0 5px;
 }
@@ -65,26 +74,38 @@ p {
   grid-row: 2;
   color: rgba(161, 0, 0, 0.8);
   font-weight: 800;
+  font-size: 16px;
+}
+
+.info-point {
+  display: grid;
+  align-items: center;
 }
 
 .menu {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 .menu .list-menu {
   list-style: none;
+  display: inline-flex;
+  justify-content: space-around;
+  justify-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .menu .list-menu .background-menu {
   display: inline-flex;
+  height: 50px;
 }
 .menu .list-menu .background-menu .item-menu {
   text-decoration: none;
   color: #fff;
   font-weight: 800;
   padding: 0 25px;
+}
+.menu .list-menu .background-menu:hover {
+  background-color: var(--color-fon-link);
 }
 .menu .list-menu .background-menu:hover .item-menu {
   text-decoration: underline;
@@ -133,7 +154,7 @@ p {
   z-index: 999;
   top: calc(50% - 15px);
   width: 45px;
-  height: 51px;
+  height: 45px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: #fff;
   border-radius: 50%;
